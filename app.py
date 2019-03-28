@@ -25,6 +25,7 @@ CORS(app)
 mongo = PyMongo(app)
 bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
+#connect db with mongo atlas cluster
 client = MongoClient('mongodb+srv://weloper:dhwlstjd0103@elibrary-cluser-saipe.mongodb.net/admin')
 db = client.blog
 
