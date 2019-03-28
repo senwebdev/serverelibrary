@@ -16,7 +16,7 @@ DEBUT=True
 app=Flask(__name__)
 app.config.from_object(__name__)
 app.config['MONGO_DBNAME'] = 'blog'
-app.config['MONGO_URI'] = 'mongodb://localhost:27017/blog'
+app.config['MONGO_URI'] = 'mongodb+srv://elibrary-cluser-saipe.mongodb.net'
 app.config['JWT_SECRET_KEY'] = 'secret'
 
 CORS(app)
