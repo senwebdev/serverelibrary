@@ -10,6 +10,7 @@ from flask_cors import CORS
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
 from flask_jwt_extended import (create_access_token, create_refresh_token, jwt_required, jwt_refresh_token_required, get_jwt_identity, get_raw_jwt)
+import os
 
 DEBUT=True
 
@@ -18,6 +19,7 @@ app.config.from_object(__name__)
 app.config['MONGO_DBNAME'] = 'blog'
 app.config['MONGO_URI'] = 'mongodb+srv://elibrary-cluser-saipe.mongodb.net'
 app.config['JWT_SECRET_KEY'] = 'secret'
+port = int(os.environ.get('PORT', 5000))
 
 CORS(app)
 
@@ -159,5 +161,5 @@ def get_popular_books():
     return dumps(cursor)
 
 if __name__ == '__main__':
-	app.run()
+	app.run(host='0.0.0.0', port=port)
  
