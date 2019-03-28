@@ -19,7 +19,6 @@ app.config.from_object(__name__)
 app.config['MONGO_DBNAME'] = 'blog'
 app.config['MONGO_URI'] = 'mongodb+srv://elibrary-cluser-saipe.mongodb.net'
 app.config['JWT_SECRET_KEY'] = 'secret'
-port = int(os.environ.get('PORT', 5000))
 
 CORS(app)
 
@@ -161,5 +160,6 @@ def get_popular_books():
     return dumps(cursor)
 
 if __name__ == '__main__':
-	app.run(host='0.0.0.0', port=port)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
  
