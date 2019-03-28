@@ -25,8 +25,12 @@ CORS(app)
 mongo = PyMongo(app)
 bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
-client = MongoClient('localhost:27017')
+client = MongoClient('elibrary-cluser-shard-00-00-saipe.mongodb.net:27017')
 db = client.blog
+
+@app.route('/', methods=['GET'])
+def welcome():
+    return 'WELCOME'
 
 @app.route('/users/register', methods=['POST'])
 def register():
