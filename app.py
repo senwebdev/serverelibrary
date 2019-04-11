@@ -85,7 +85,7 @@ def login():
 def all_books():
     response_object = {'status': 'success'}
     if request.method == 'POST':
-        post_data = request.get_json()
+        post_data = request.get_json()       
         insert_book(post_data)
         response_object['message'] = 'Book added!'
     else:
